@@ -1,5 +1,10 @@
 public class Main {
 
+    //does Shape's equals have to override object's equal? can i make my own equal so it recivce a Shape?
+
+
+
+
     public static void main(String[] args) {
         test1();
         test2();
