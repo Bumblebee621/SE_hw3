@@ -9,11 +9,11 @@ public class Rectangle extends Shape {
         this.maxWidth = width;
     }
 
-    public double getHeight() {
+    public int getHeight() {
         return maxHeight;
     }
 
-    public double getWidth() {
+    public int getWidth() {
         return maxWidth;
     }
 
@@ -30,9 +30,8 @@ public class Rectangle extends Shape {
     public String toString() {
         String res = "";
         for (int i = 0; i < maxHeight; i++) {
-                res += " ";
-                res += "* ".repeat(maxWidth);
-                res += "\n ";
+                res += " * ".repeat(maxWidth);
+                res += "\n";
         }
         return res;
     }

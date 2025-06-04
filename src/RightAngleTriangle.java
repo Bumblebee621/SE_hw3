@@ -9,11 +9,11 @@ public class RightAngleTriangle extends Shape {
         this.maxWidth = base;
     }
 
-    public double getHeight() {
+    public int getHeight() {
         return maxHeight;
     }
 
-    public double getWidth() {
+    public int getWidth() {
         return maxWidth;
     }
 
@@ -22,18 +22,31 @@ public class RightAngleTriangle extends Shape {
     }
 
     public double area() {
-        return (double)(maxWidth * maxHeight / 2);
+        return ((double)maxWidth * maxHeight / 2);
     }
 
     //is it i or i+1
     @Override
     public String toString() {
         String res = "";
-        for (int i = 1; i < maxHeight; i++) {
-            res += " ";
-            res += "* ".repeat((int)(i * maxWidth / maxHeight));
-            res += "  ".repeat((int)(maxWidth - i * maxWidth / maxHeight));
-            res += "\n ";
+        for (int i = 1; i <= maxHeight; i++) {
+            int stars = ((int)((double)i*maxWidth/maxHeight));
+            if(((double)i*maxWidth/maxHeight) > 0.5 && ((double)i*maxWidth/maxHeight) < 1.0){
+                res += " * ";
+            }
+            else {
+                res += " * ".repeat(stars);
+            }
+            res += "   ".repeat(maxWidth - stars);
+//            double temp =  i * (double)maxWidth / (double)maxHeight;
+//            if(temp % 1 > 0.5){
+//                res += " * ".repeat((int)(temp) + 1);
+//            }
+//            else{
+//                res += " * ".repeat((int)(temp));
+//            }
+//            res += "   ".repeat((int)(maxWidth - temp));
+            res += "\n";
         }
         return res;
     }
